@@ -14,6 +14,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_cleanup.apps.CleanupConfig',
+
+    # My apps
+    'home',
+    'users',
+    
+    # Third party
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'django_browser_reload',
+    'django_htmx',
 ]
 
 MIDDLEWARE = [
@@ -85,3 +96,10 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
+
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+

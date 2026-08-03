@@ -18,7 +18,7 @@ INSTALLED_APPS = [
     # My apps
     'home',
     'users',
-    'messages',
+    'chat',
     
     # Third party
     'allauth',

@@ -1,6 +1,8 @@
+from django.conf import settings
 from django.db import models
-from django.contrib.auth.models import User
 import shortuuid
+
+User = settings.AUTH_USER_MODEL
 
 class ChatGroup(models.Model):
     group_name = models.CharField(max_length=128, unique=True, blank=True)

@@ -17,3 +17,16 @@ class ChatGroup(models.Model):
         if not self.group_name:
             self.group_name = shortuuid.uuid()
         super().save(*args, **kwargs)
+    
+    
+class GroupMessage(models.Model):
+    group = models.ForeignKey(ChatGroup, related_name='chat_messages', on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    body = models.CharField(max_length=300, blank=True, null=True)
+    created = models.DateTimeField(auto_now_add=True)
+    
+    
+    def __str__(self):
+        return f'{self.author.username} : {self.body}'
+        
+    
